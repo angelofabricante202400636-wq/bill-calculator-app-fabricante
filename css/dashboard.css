@@ -1,0 +1,238 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-math-calculator-ruler-school-supplies-border-element-png-image_5569722.jpg')
+        no-repeat center center/cover;
+}
+
+.sidebar {
+    position: fixed;
+    left: 20px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    z-index: 999;
+    padding: 15px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #616364, #9fc1e9);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.sidebar img {
+    width: 35px;
+    cursor: pointer;
+    filter: grayscale(40%);
+    transition: 0.2s;
+}
+
+.sidebar img:hover {
+    filter: grayscale(0%);
+}
+
+.container {
+    width: 90%;
+    margin: 120px auto;
+    padding-left: 80px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 15px;
+}
+main {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.graph-container {
+    width: 65%;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.graph-header h3 {
+    color: #8feaff;
+}
+
+.graph-header span {
+    color: #ccc;
+}
+
+.graph-img {
+    width: 100%;
+    height: 220px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 8px;
+    object-fit: fill;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-box {
+    flex: 1;
+    min-width: 100px;
+}
+
+.stat-box p {
+    color: #8feaff;
+    font-size: 14px;
+}
+
+.stat-box h2 {
+    margin-top: 5px;
+}
+
+.devices {
+    width: 30%;
+    background: rgba(255,255,255,0.95);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.device {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.toggle {
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.toggle.on { background: #18d173; }
+.toggle.off { background: #333; }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.nav-btn {
+    padding: 10px;
+    border: none;
+    background: #0f2035;
+    border-radius: 8px;
+    color: #ccc;
+    cursor: pointer;
+    min-width: 120px;
+    flex-shrink: 0;
+}
+
+.nav-btn.active {
+    border-bottom: 3px solid #18d173;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+    }
+
+    .graph-container,
+    .devices {
+        width: 100%;
+    }
+
+    .container {
+        padding-left: 40px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        flex-direction: row;
+        position: fixed;
+        bottom: 15px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 15px;
+        padding: 8px 12px;
+        background: rgba(0,0,0,0.25);
+        backdrop-filter: blur(6px);
+        border-radius: 12px;
+    }
+
+    .sidebar img {
+        width: 25px; 
+        padding: 4px;
+    }
+
+    .container {
+        padding-left: 0;
+        margin-top: 25px;
+    }
+
+    header nav { display: none; }
+
+    .graph-img { height: 160px; }
+
+    .stats {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    footer {
+        justify-content: flex-start;
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 450px) {
+    header .logo { font-size: 18px; }
+
+    .device p { font-size: 14px; }
+
+    .toggle {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    .nav-btn { min-width: 100px; }
+
+    .sidebar img {
+        width: 22px;
+        padding: 3px;
+    }
+}

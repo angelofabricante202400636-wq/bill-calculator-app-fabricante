@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Electric Bill Calculator</title>
+  <link rel="stylesheet" href="css/calculator.css" />
+</head>
+<body>
+        <div class="sidebar">
+            <img src="icons/home.png" alt="Home" onclick="location.href='dashboard.html'" style="cursor:pointer;">
+            <img src="icons/profile.png" alt="profile" onclick="location.href='profile.html'" style="cursor:pointer;">
+            <img src="icons/calculator.png" alt="calculator" onclick="location.href='calculator.html'" style="cursor:pointer;">
+            <img src="icons/history.png" alt="history"onclick="location.href='history.html'" style="cursor:pointer;">
+            <img src="icons/settings.png" alt="settings" onclick="location.href='settings.html'" style="cursor:pointer;">
+        </div> 
+
+  <div class="container">
+    <h1>ELECTRIC BILL<br>CALCULATOR</h1>
+    <button class="btn-calculator">Calculator</button>
+
+    <div class="form-box">
+      <form id="billForm" onsubmit="return false;">
+        <label for="month">MONTH</label>
+        <input type="text" id="month" name="month" placeholder="e.g. January" />
+
+        <label for="power">POWER CONSUMPTION</label>
+        <input type="number" id="power" name="power" placeholder="kWh" />
+
+        <label for="cost">COST PER KWH</label>
+        <input type="number" step="0.01" id="cost" name="cost" placeholder="e.g. 0.12" />
+
+        <button class="btn-calculate" onclick="calculateBill()">CALCULATE</button>
+        <div class="result" id="result">RESULT:</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function calculateBill() {
+      const power = parseFloat(document.getElementById('power').value);
+      const cost = parseFloat(document.getElementById('cost').value);
+
+      if (isNaN(power) || isNaN(cost)) {
+        document.getElementById('result').textContent = "RESULT: Please enter valid numbers!";
+        return;
+      }
+
+      const total = power * cost;
+      document.getElementById('result').textContent = "RESULT: ₱" + total.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

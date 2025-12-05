@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Sidebar wrapper with background -->
+    <div class="sidebar-wrapper">
+        <div class="sidebar">
+            <img src="icons/home.png" alt="Home" onclick="location.href='dashboard.html'">
+            <img src="icons/profile.png" alt="Profile" onclick="location.href='profile.html'">
+            <img src="icons/calculator.png" alt="Calculator" onclick="location.href='calculator.html'">
+            <img src="icons/history.png" alt="History" onclick="location.href='history.html'">
+            <img src="icons/settings.png" alt="Settings" onclick="location.href='settings.html'">
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">⚡ Electric Bill Calculator</div>
+            <nav>
+                <a href="#">Overview</a>
+                <a href="#">Customer Care</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="graph-container">
+                <div class="graph-header">
+                    <h3>Weekly <span>/ Monthly</span></h3>
+                </div>
+                <img src="graph2.image" class="graph-img" alt="Graph">
+                <div class="stats">
+                    <div class="stat-box">
+                        <p>TODAY</p>
+                        <h2>14 kWh</h2>
+                    </div>
+                    <div class="stat-box">
+                        <p>THIS WEEK</p>
+                        <h2>60 kWh</h2>
+                    </div>
+                    <div class="stat-box">
+                        <p>THIS MONTH</p>
+                        <h2>258 kWh</h2>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="devices">
+                <h3>Devices</h3>
+                <div class="device">
+                    <p>Lights</p>
+                    <span>5 kWh</span>
+                    <button class="toggle on">ON</button>
+                </div>
+                <div class="device">
+                    <p>Lamp</p>
+                    <span>6 kWh</span>
+                    <button class="toggle on">ON</button>
+                </div>
+                <div class="device">
+                    <p>AC</p>
+                    <span>9 kWh</span>
+                    <button class="toggle on">ON</button>
+                </div>
+                <div class="device">
+                    <p>Fan</p>
+                    <span>8 kWh</span>
+                    <button class="toggle off">OFF</button>
+                </div>
+                <div class="device">
+                    <p>TV</p>
+                    <span>9 kWh</span>
+                    <button class="toggle on">ON</button>
+                </div>
+                <div class="device">
+                    <p>Iron</p>
+                    <span>6 kWh</span>
+                    <button class="toggle off">OFF</button>
+                </div>
+            </aside>
+        </main>
+
+        <!-- FOOTER NAV -->
+        <footer>
+            <button class="nav-btn">Living Room</button>
+            <button class="nav-btn active">Bedroom</button>
+            <button class="nav-btn">Kids Bedroom</button>
+            <button class="nav-btn">Kitchen</button>
+            <button class="nav-btn">Washroom</button>
+        </footer>
+    </div>
+</body>
+
+</html>
