@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout with sidebar on the left and main content to the right */
+body {
+  font-family: 'Times New Roman', serif;
+  min-height: 100vh;
+  display: flex;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-math-calculator-ruler-school-supplies-border-element-png-image_5569722.jpg')
+    no-repeat center center/cover;
+}
+
+/* Sidebar styles (simple) */
+.sidebar-wrapper {
+  width: 200px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.sidebar {
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main container */
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px 20px;
+}
+
+.container > div,
+.container > form,
+.container > h1 {
+  max-width: 500px;
+  width: 100%;
+}
+
+.container-inner {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+}
+
+/* If you want the white card look directly on .container */
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  backdrop-filter: blur(6px);
+  max-width: 600px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 1.8px;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+/* Style the calculate button (use the id) */
+#btn_calculate {
+  width: 100%;
+  background-color: #0078ff;
+  border: none;
+  padding: 8px 0;
+  border-radius: 7px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: 0.3s;
+}
+
+#btn_calculate:hover {
+  background-color: #005fcc;
+}
+
+/* Style the result area (use the id) */
+#result {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #222;
+  text-align: left;
+  margin-top: 10px;
+}
+
+/* Form labels and inputs */
+label {
+  font-size: 10px;
+  color: #222;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  font-size: 14px;
+}
+
+/* Optional table styling */
+#myTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+#myTable th,
+#myTable td {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+#myTable th {
+  background-color: #eaeaea;
+}

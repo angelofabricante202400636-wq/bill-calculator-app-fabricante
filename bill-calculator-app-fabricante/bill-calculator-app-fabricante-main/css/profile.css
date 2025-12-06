@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* BODY & BACKGROUND */
+body {
+    font-family: 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-math-calculator-ruler-school-supplies-border-element-png-image_5569722.jpg')
+        no-repeat center center/cover;
+}
+
+
+.sidebar {
+    position: fixed;
+    left: 10px;
+    top: 40px;
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #616364, #9fc1e9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    transition: transform 2000S, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.sidebar img {
+    width: 38px;
+    cursor: pointer;
+    filter: grayscale(40%);
+    transition: 0.3s;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.sidebar img:hover {
+    filter: grayscale(0%);
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.card {
+    width: 100%;
+    background-color: rgba(255,255,255,0.95);
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+}
+
+.title {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.profile-btn {
+    background: #0078ff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 25px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.profile-btn:hover {
+    background: #005fcc;
+}
+
+.profile-box {
+    width: 100%;
+    background: rgba(200,200,200,0.9);
+    padding: 25px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+form input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: none;
+    background: #f0f0f0;
+    font-size: 15px;
+}
+
+@media (max-width: 700px) {
+    .container { padding: 30px 15px; }
+    .card { padding: 25px 20px; }
+    .title { font-size: 24px; }
+    .profile-btn { width: 100%; padding: 12px; font-size: 15px; }
+    .profile-box { padding: 18px; }
+    .avatar { width: 70px; height: 70px; }
+    form input { padding: 12px 14px; font-size: 14px; }
+
+    .sidebar {
+        flex-direction: row;
+        position: fixed;
+        bottom: 15px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        padding: 10px 18px;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        justify-content: center;
+    }
+
+    .sidebar img { width: 30px; }
+}
+
+@media (max-width: 430px) {
+    .title { font-size: 20px; }
+    form input { font-size: 13px; padding: 10px 12px; }
+}

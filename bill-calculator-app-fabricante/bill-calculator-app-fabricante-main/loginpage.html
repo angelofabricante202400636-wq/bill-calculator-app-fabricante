@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Electric Calculator Login</title>
+  <link rel="stylesheet" href="css/loginpage.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h1>Welcome Back</h1>
+      <p>Please enter your details</p>
+
+      <!-- Login form -->
+      <form onsubmit="handleLogin(event)">
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <a href="recoverpage.html" class="forgot-password">Forgot password?</a>
+        <input type="submit" class="button" value="Sign in" />
+      </form>
+
+      <!-- Google login button -->
+      <button type="button" onclick="handleGoogleLogin()" class="google-signin">
+        Sign in with Google
+      </button>
+      
+      <p class="signup">
+        Don't have an account? <a href="signuppage.html">Sign up</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <!-- Initialize Supabase client -->
+  <script>
+    const supabaseUrl = "https://aueqdiqxezfxwcvmhjey.supabase.co";
+    const supabaseKey = "sb_publishable_4DM9-7c0TnBIloC5mjW7tA_ChoszsvG";
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      await redirectIfAuthenticated();
+    });
+
+    async function handleLogin(event) {
+      event.preventDefault(); // prevent form reload
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (!email || !password) {
+        alert("Please fill in all fields!");
+        return;
+      }
+
+      const submitBtn = document.querySelector('input[type="submit"].button');
+      const originalValue = submitBtn.value;
+      submitBtn.value = "Logging in...";
+      submitBtn.disabled = true;
+
+      try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+          email,
+          password,
+        });
+
+        if (error || !data.session) {
+          alert("Login failed: " + (error ? error.message : "No session created"));
+          submitBtn.value = originalValue;
+          submitBtn.disabled = false;
+          return;
+        }
+
+        // Success
+        window.location.href = "/bill-calculator-app-fabricante-main/dashboard.html";
+      } catch (err) {
+        alert("An error occurred: " + err.message);
+        submitBtn.value = originalValue;
+        submitBtn.disabled = false;
+      }
+    }
+
+    async function handleGoogleLogin() {
+      const { data, error } = await supabaseClient.auth.signInWithOAuth({
+        provider: "google",
+      });
+      if (error) {
+        alert("Google login failed: " + error.message);
+      }
+    }
+
+    async function redirectIfAuthenticated() {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session) {
+        window.location.href = "/bill-calculator-app-fabricante-main/dashboard.html";
+      }
+    }
+  </script>
+</body>
+</html>

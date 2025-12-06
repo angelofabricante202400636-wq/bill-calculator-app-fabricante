@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recover Password</title>
+    <link rel="stylesheet" href="css/recoverpage.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="form-container">
+
+            <h1>Recover Password</h1>
+
+            <form action="#" method="POST">
+
+                <label for="email">Use Email Account / Phone Number:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="recovery-code">Input Recovery Code:</label>
+                <input type="text" id="recovery-code" name="recovery-code" required>
+
+                <label for="new-password">Input New Password:</label>
+                <input type="password" id="new-password" name="new-password" required>
+
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+
+                <input type="button" onclick="location.href='dashboard.html'"class="button" value="Update Password">
+
+            </form>
+
+            <p class="footer-text">
+                Already have an account?
+                <a href="loginpage.html">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>

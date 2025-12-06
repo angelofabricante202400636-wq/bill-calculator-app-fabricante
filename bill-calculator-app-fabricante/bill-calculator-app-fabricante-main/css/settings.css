@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Times New Roman', serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background:
+        linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+        url('https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-math-calculator-ruler-school-supplies-border-element-png-image_5569722.jpg')
+        no-repeat center center/cover;
+}
+
+.sidebar {
+    position: fixed;
+    left: 10px;
+    top: 40px;
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #616364, #9fc1e9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    transition: transform 2000000s, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.sidebar img {
+    width: 38px;
+    cursor: pointer;
+    filter: grayscale(40%);
+    transition: 0.3s;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.sidebar img:hover {
+    filter: grayscale(0%);
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.2);
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px 40px 20px;
+    position: relative;
+}
+
+.panel {
+    width: 60%;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 25px;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+}
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #333;
+}
+
+.sub-title {
+    text-align: center;
+    background: #f5d6d6;
+    padding: 6px 20px;
+    width: fit-content;
+    margin: 14px auto 20px auto;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.settings-grid {
+    background: rgba(200,200,200,0.85);
+    padding: 40px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    justify-items: center;
+}
+
+.settings-grid input {
+    padding: 12px 10px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 80%;
+    background: #f0f0f0;
+    outline: none;
+    transition: 0.3s;
+}
+
+.settings-grid input:focus {
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0,123,255,0.6);
+}
+
+.logout-btn {
+    grid-column: 2;
+    padding: 10px 20px;
+    width: 80%;
+    background: #ff6b6b;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #e55b5b;
+}
+
+@media (max-width: 900px) {
+    .panel {
+        width: 80%;
+        padding: 25px 20px;
+    }
+
+    .settings-grid {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        flex-direction: row;
+        position: fixed;
+        bottom: 15px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        padding: 12px 18px;
+        border-radius: 15px;
+        background: rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+        justify-content: center;
+    }
+
+    .sidebar img {
+        width: 38px;
+    }
+
+    .panel {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .settings-grid input,
+    .logout-btn {
+        width: 100%;
+    }
+
+    .main-title {
+        font-size: 22px;
+    }
+
+    .sub-title {
+        font-size: 14px;
+        padding: 5px 15px;
+    }
+}
+
+@media (max-width: 430px) {
+    .main-title {
+        font-size: 20px;
+    }
+
+    .settings-grid {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .sub-title {
+        font-size: 13px;
+    }
+
+    .settings-grid input,
+    .logout-btn {
+        font-size: 13px;
+        padding: 8px;
+    }
+}
