@@ -1,0 +1,142 @@
+body {
+    font-family: "Georgia", serif;
+    margin: 0;
+    padding: 0;
+    background: 
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('https://png.pngtree.com/png-clipart/20201208/original/pngtree-hand-drawn-math-calculator-ruler-school-supplies-border-element-png-image_5569722.jpg')
+        no-repeat center center/cover;
+}
+
+.sidebar {
+    position: fixed;
+    left: 10px;
+    top: 40px;
+    padding: 15px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #616364, #9fc1e9);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    transition: transform 200000S, box-shadow 0.3s;
+    z-index: 1000;
+}
+
+.sidebar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+.sidebar img {
+    width: 38px;
+    cursor: pointer;
+    filter: grayscale(40%);
+    transition: 0.3s;
+    padding: 6px;
+    border-radius: 10px;
+}
+
+.sidebar img:hover {
+    filter: grayscale(0%);
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.2);
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    padding: 140px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+.calculator-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.panel {
+    width: 100%;
+    background: rgba(88,87,87,0.9);
+    padding: 25px;
+    border-radius: 18px;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.main-title {
+    text-align: center;
+    font-size: 28px;
+}
+
+.sub-title {
+    text-align: center;
+    background: rgba(217,217,217,0.9);
+    padding: 5px 12px;
+    width: fit-content;
+    margin: 15px auto 20px auto;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.95);
+}
+
+.history-table th,
+.history-table td {
+    border: 1px solid #555;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.history-table th {
+    background: #e6e6e6;
+    font-weight: bold;
+}
+
+.history-table tbody tr:hover {
+    background: rgba(142,142,142,0.3);
+    transition: 0.2s;
+}
+
+@media (max-width: 900px) {
+    .main-title { font-size: 24px; }
+    .panel { padding: 20px; }
+    .history-table th, .history-table td { font-size: 13px; padding: 8px; }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        flex-direction: row;
+        position: fixed;
+        bottom: 15px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 20px;
+        padding: 12px 18px;
+        border-radius: 18px;
+        width: auto;
+        justify-content: center;
+        backdrop-filter: blur(15px);
+    }
+
+    .sidebar img {
+        width: 30px;
+    }
+}
+
